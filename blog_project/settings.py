@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-uy'
 
-TIME_ZONE = 'america/montevideo'
+TIME_ZONE = 'America/Montevideo'
 
 USE_I18N = True
 
