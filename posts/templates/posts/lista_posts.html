@@ -5,13 +5,17 @@
 {% block content %}
     <h1>Posts</h1>
 
+    <a href="{% url 'crear_post' %}">+ Nuevo Post</a>
+
     {% for post in posts %}
         <article>
-            <h2>{{ post.titulo }}</h2>
+            {% if post.imagen %}
+                <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" style="max-width: 300px;">
+            {% endif %}
+            <h2><a href="{% url 'detalle_post' post.id %}">{{ post.titulo }}</a></h2>
             <p><strong>Autor:</strong> {{ post.autor }}</p>
             <p><strong>Estado:</strong> {{ post.estado }}</p>
             <p><strong>Publicado el:</strong> {{ post.fecha_creacion }}</p>
-            <p>{{ post.contenido }}</p>
         </article>
         <hr>
     {% endfor %}
